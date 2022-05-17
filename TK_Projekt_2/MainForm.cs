@@ -11,8 +11,6 @@
 
         private bool playing;
 
-        private const string AboutMeLabelText = "Projekt zaliczeniowy\n\nPrzedmiot: Technologie Kognitywne\n\nRok akademicki: 2022\n\nSkład zespołu:\nKarolina Wróbel\nAlicja Wróbel\nWiktor Mendalka";
-
         public MainForm()
         {
             InitializeComponent();
@@ -40,8 +38,6 @@
             // Add the ElementHost control to the form's
             // collection of child controls.
             this.playbackPanel.Controls.Add(host);
-
-            this.aboutLabel.Text = AboutMeLabelText;
             this.Update();
         }
 
@@ -51,6 +47,7 @@
             this.mainPanel.Visible = true;
 
             stopButton_Click(sender, e);
+            this.uc.Source = null;
         }
 
         private void returnAboutButton_Click(object sender, EventArgs e)
@@ -87,7 +84,7 @@
 
             var video = VideoData.Videos[index];
 
-            this.uc.Source = video.Uri;
+            this.uc.Source = video.Source;
             this.videoInfoLabel.Text = video.Description;
         }
 
