@@ -47,13 +47,29 @@
             this.mainPanel.Visible = true;
 
             stopButton_Click(sender, e);
-            this.uc.Source = null;
         }
 
         private void returnAboutButton_Click(object sender, EventArgs e)
         {
             this.aboutPanel.Visible = false;
             this.mainPanel.Visible = true;
+        }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            this.mainPanel.Visible = false;
+            this.aboutPanel.Visible = true;
+        }
+
+        private void ShowVideoPanel(int index)
+        {
+            var video = VideoData.Videos[index];
+
+            this.uc.Source = video.Source;
+            this.videoInfoLabel.Text = video.Description;
+
+            this.mainPanel.Visible = false;
+            this.videoPanel.Visible = true;
         }
 
         private void video1Button_Click(object sender, EventArgs e)
@@ -69,23 +85,6 @@
         private void video3Button_Click(object sender, EventArgs e)
         {
             this.ShowVideoPanel(2);
-        }
-
-        private void aboutButton_Click(object sender, EventArgs e)
-        {
-            this.mainPanel.Visible = false;
-            this.aboutPanel.Visible = true;
-        }
-
-        private void ShowVideoPanel(int index)
-        {
-            this.mainPanel.Visible = false;
-            this.videoPanel.Visible = true;
-
-            var video = VideoData.Videos[index];
-
-            this.uc.Source = video.Source;
-            this.videoInfoLabel.Text = video.Description;
         }
 
         private void startButton_Click(object sender, EventArgs e)

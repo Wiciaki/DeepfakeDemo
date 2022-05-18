@@ -39,9 +39,9 @@
             this.aboutLabel = new System.Windows.Forms.Label();
             this.returnAboutButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mainMenuLabel = new System.Windows.Forms.Label();
+            this.mainMenuClickLabel = new System.Windows.Forms.Label();
+            this.mainMenuQuestionLabel = new System.Windows.Forms.Label();
+            this.mainMenuTitleLabel = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
             this.video3Button = new System.Windows.Forms.Button();
             this.video2Button = new System.Windows.Forms.Button();
@@ -146,9 +146,10 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.label2);
-            this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Controls.Add(this.mainMenuLabel);
+            this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
+            this.mainPanel.Controls.Add(this.mainMenuClickLabel);
+            this.mainPanel.Controls.Add(this.mainMenuQuestionLabel);
+            this.mainPanel.Controls.Add(this.mainMenuTitleLabel);
             this.mainPanel.Controls.Add(this.aboutButton);
             this.mainPanel.Controls.Add(this.video3Button);
             this.mainPanel.Controls.Add(this.video2Button);
@@ -158,37 +159,43 @@
             this.mainPanel.Size = new System.Drawing.Size(364, 426);
             this.mainPanel.TabIndex = 2;
             // 
-            // label2
+            // mainMenuClickLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(101, 174);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 24);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Kliknij i sprawdź!\r\n";
+            this.mainMenuClickLabel.AutoSize = true;
+            this.mainMenuClickLabel.BackColor = System.Drawing.Color.Transparent;
+            this.mainMenuClickLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenuClickLabel.ForeColor = System.Drawing.Color.White;
+            this.mainMenuClickLabel.Location = new System.Drawing.Point(101, 174);
+            this.mainMenuClickLabel.Name = "mainMenuClickLabel";
+            this.mainMenuClickLabel.Size = new System.Drawing.Size(165, 24);
+            this.mainMenuClickLabel.TabIndex = 6;
+            this.mainMenuClickLabel.Text = "Kliknij i sprawdź!";
             // 
-            // label1
+            // mainMenuQuestionLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 32);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Zastanawiałeś się kiedyś, jak WYGLĄDA znana poezja\r\nczytana USTAMI jej własnego a" +
+            this.mainMenuQuestionLabel.AutoSize = true;
+            this.mainMenuQuestionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.mainMenuQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenuQuestionLabel.ForeColor = System.Drawing.Color.White;
+            this.mainMenuQuestionLabel.Location = new System.Drawing.Point(14, 103);
+            this.mainMenuQuestionLabel.Name = "mainMenuQuestionLabel";
+            this.mainMenuQuestionLabel.Size = new System.Drawing.Size(338, 32);
+            this.mainMenuQuestionLabel.TabIndex = 5;
+            this.mainMenuQuestionLabel.Text = "Zastanawiałeś się kiedyś, jak WYGLĄDA znana poezja\r\nczytana USTAMI jej własnego a" +
     "utora?";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mainMenuQuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mainMenuLabel
+            // mainMenuTitleLabel
             // 
-            this.mainMenuLabel.AutoSize = true;
-            this.mainMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainMenuLabel.Location = new System.Drawing.Point(39, 32);
-            this.mainMenuLabel.Name = "mainMenuLabel";
-            this.mainMenuLabel.Size = new System.Drawing.Size(293, 33);
-            this.mainMenuLabel.TabIndex = 4;
-            this.mainMenuLabel.Text = "Wirtualna Biblioteka";
+            this.mainMenuTitleLabel.AutoSize = true;
+            this.mainMenuTitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.mainMenuTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenuTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.mainMenuTitleLabel.Location = new System.Drawing.Point(39, 32);
+            this.mainMenuTitleLabel.Name = "mainMenuTitleLabel";
+            this.mainMenuTitleLabel.Size = new System.Drawing.Size(293, 33);
+            this.mainMenuTitleLabel.TabIndex = 4;
+            this.mainMenuTitleLabel.Text = "Wirtualna Biblioteka";
             // 
             // aboutButton
             // 
@@ -240,8 +247,10 @@
             this.Controls.Add(this.videoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Edukacyjny deepfake";
+            this.Text = "Edukacyjny Deepfake";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.videoPanel.ResumeLayout(false);
             this.aboutPanel.ResumeLayout(false);
@@ -267,9 +276,9 @@
         private System.Windows.Forms.Button video3Button;
         private System.Windows.Forms.Button video2Button;
         private System.Windows.Forms.Button video1Button;
-        private System.Windows.Forms.Label mainMenuLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label mainMenuTitleLabel;
+        private System.Windows.Forms.Label mainMenuClickLabel;
+        private System.Windows.Forms.Label mainMenuQuestionLabel;
     }
 }
 
